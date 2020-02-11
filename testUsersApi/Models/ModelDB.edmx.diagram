@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ebd2f139b175480bbf25abb7d2948945" Name="Diagram1">
+        <EntityTypeShape EntityType="Users_Model.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Users_Model.Coordinates" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Users_Model.Dobs" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Users_Model.Ids" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="Users_Model.Infoes" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Users_Model.Locations" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Users_Model.Logins" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Users_Model.Names" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Users_Model.Pictures" Width="1.5" PointX="3" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Users_Model.Registereds" Width="1.5" PointX="3" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Users_Model.Results" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Users_Model.Streets" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Users_Model.Timezones" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Users_Model.UsersInfoes" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="Users_Model.FK_dbo_Locations_dbo_Coordinates_Coordinates_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="Users_Model.FK_dbo_Results_dbo_Dobs_Dob_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="Users_Model.FK_dbo_Results_dbo_Ids_id_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="Users_Model.FK_dbo_UsersInfoes_dbo_Infoes_Info_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="Users_Model.FK_dbo_Locations_dbo_Streets_Street_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="Users_Model.FK_dbo_Locations_dbo_Timezones_Timezone_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="Users_Model.FK_dbo_Results_dbo_Locations_Location_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="Users_Model.FK_dbo_Results_dbo_Logins_Login_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="Users_Model.FK_dbo_Results_dbo_Names_Name_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="Users_Model.FK_dbo_Results_dbo_Pictures_Picture_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="Users_Model.FK_dbo_Results_dbo_Registereds_Registered_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="Users_Model.UsersInfoResults" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

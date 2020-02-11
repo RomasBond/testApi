@@ -1,0 +1,929 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище Users_Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Coordinates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Latitude" Type="nvarchar(max)" />
+          <Property Name="Longitude" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Dobs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="nvarchar(max)" />
+          <Property Name="Age" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ids">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Infoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Seed" Type="nvarchar(max)" />
+          <Property Name="Results" Type="int" Nullable="false" />
+          <Property Name="Page" Type="int" Nullable="false" />
+          <Property Name="Version" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Locations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="City" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Postcode" Type="nvarchar(max)" />
+          <Property Name="Coordinates_ID" Type="int" />
+          <Property Name="Street_ID" Type="int" />
+          <Property Name="Timezone_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Uuid" Type="nvarchar(max)" />
+          <Property Name="Username" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="Salt" Type="nvarchar(max)" />
+          <Property Name="Md5" Type="nvarchar(max)" />
+          <Property Name="Sha1" Type="nvarchar(max)" />
+          <Property Name="Sha256" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Names">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="First" Type="nvarchar(max)" />
+          <Property Name="Last" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Pictures">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Large" Type="nvarchar(max)" />
+          <Property Name="Medium" Type="nvarchar(max)" />
+          <Property Name="Thumbnail" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Registereds">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="nvarchar(max)" />
+          <Property Name="Age" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Results">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Cell" Type="nvarchar(max)" />
+          <Property Name="Nat" Type="nvarchar(max)" />
+          <Property Name="Dob_ID" Type="int" />
+          <Property Name="id_ID" Type="int" />
+          <Property Name="Location_ID" Type="int" />
+          <Property Name="Login_ID" Type="int" />
+          <Property Name="Name_ID" Type="int" />
+          <Property Name="Picture_ID" Type="int" />
+          <Property Name="Registered_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="Streets">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Timezones">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Offset" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UsersInfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Info_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="UsersInfoResults">
+          <Key>
+            <PropertyRef Name="UsersInfo_ID" />
+            <PropertyRef Name="Result_ID" />
+          </Key>
+          <Property Name="UsersInfo_ID" Type="int" Nullable="false" />
+          <Property Name="Result_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_Locations_dbo_Coordinates_Coordinates_ID">
+          <End Role="Coordinates" Type="Self.Coordinates" Multiplicity="0..1" />
+          <End Role="Locations" Type="Self.Locations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coordinates">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Locations">
+              <PropertyRef Name="Coordinates_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Locations_dbo_Streets_Street_ID">
+          <End Role="Streets" Type="Self.Streets" Multiplicity="0..1" />
+          <End Role="Locations" Type="Self.Locations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Streets">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Locations">
+              <PropertyRef Name="Street_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Locations_dbo_Timezones_Timezone_ID">
+          <End Role="Timezones" Type="Self.Timezones" Multiplicity="0..1" />
+          <End Role="Locations" Type="Self.Locations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Timezones">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Locations">
+              <PropertyRef Name="Timezone_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Results_dbo_Dobs_Dob_ID">
+          <End Role="Dobs" Type="Self.Dobs" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dobs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="Dob_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Results_dbo_Ids_id_ID">
+          <End Role="Ids" Type="Self.Ids" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ids">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="id_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Results_dbo_Locations_Location_ID">
+          <End Role="Locations" Type="Self.Locations" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Locations">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="Location_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Results_dbo_Logins_Login_ID">
+          <End Role="Logins" Type="Self.Logins" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Logins">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="Login_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Results_dbo_Names_Name_ID">
+          <End Role="Names" Type="Self.Names" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Names">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="Name_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Results_dbo_Pictures_Picture_ID">
+          <End Role="Pictures" Type="Self.Pictures" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pictures">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="Picture_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Results_dbo_Registereds_Registered_ID">
+          <End Role="Registereds" Type="Self.Registereds" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registereds">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="Registered_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UsersInfoes_dbo_Infoes_Info_ID">
+          <End Role="Infoes" Type="Self.Infoes" Multiplicity="0..1" />
+          <End Role="UsersInfoes" Type="Self.UsersInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Infoes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UsersInfoes">
+              <PropertyRef Name="Info_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UsersInfoResults_dbo_Results_Result_ID">
+          <End Role="Results" Type="Self.Results" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UsersInfoResults" Type="Self.UsersInfoResults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Results">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UsersInfoResults">
+              <PropertyRef Name="Result_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UsersInfoResults_dbo_UsersInfoes_UsersInfo_ID">
+          <End Role="UsersInfoes" Type="Self.UsersInfoes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UsersInfoResults" Type="Self.UsersInfoResults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersInfoes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UsersInfoResults">
+              <PropertyRef Name="UsersInfo_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище Users_ModelContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Coordinates" EntityType="Self.Coordinates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dobs" EntityType="Self.Dobs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ids" EntityType="Self.Ids" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Infoes" EntityType="Self.Infoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Locations" EntityType="Self.Locations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logins" EntityType="Self.Logins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Names" EntityType="Self.Names" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pictures" EntityType="Self.Pictures" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registereds" EntityType="Self.Registereds" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Results" EntityType="Self.Results" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Streets" EntityType="Self.Streets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Timezones" EntityType="Self.Timezones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersInfoes" EntityType="Self.UsersInfoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersInfoResults" EntityType="Self.UsersInfoResults" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_Locations_dbo_Coordinates_Coordinates_ID" Association="Self.FK_dbo_Locations_dbo_Coordinates_Coordinates_ID">
+            <End Role="Coordinates" EntitySet="Coordinates" />
+            <End Role="Locations" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Locations_dbo_Streets_Street_ID" Association="Self.FK_dbo_Locations_dbo_Streets_Street_ID">
+            <End Role="Streets" EntitySet="Streets" />
+            <End Role="Locations" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Locations_dbo_Timezones_Timezone_ID" Association="Self.FK_dbo_Locations_dbo_Timezones_Timezone_ID">
+            <End Role="Timezones" EntitySet="Timezones" />
+            <End Role="Locations" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Results_dbo_Dobs_Dob_ID" Association="Self.FK_dbo_Results_dbo_Dobs_Dob_ID">
+            <End Role="Dobs" EntitySet="Dobs" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Results_dbo_Ids_id_ID" Association="Self.FK_dbo_Results_dbo_Ids_id_ID">
+            <End Role="Ids" EntitySet="Ids" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Results_dbo_Locations_Location_ID" Association="Self.FK_dbo_Results_dbo_Locations_Location_ID">
+            <End Role="Locations" EntitySet="Locations" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Results_dbo_Logins_Login_ID" Association="Self.FK_dbo_Results_dbo_Logins_Login_ID">
+            <End Role="Logins" EntitySet="Logins" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Results_dbo_Names_Name_ID" Association="Self.FK_dbo_Results_dbo_Names_Name_ID">
+            <End Role="Names" EntitySet="Names" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Results_dbo_Pictures_Picture_ID" Association="Self.FK_dbo_Results_dbo_Pictures_Picture_ID">
+            <End Role="Pictures" EntitySet="Pictures" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Results_dbo_Registereds_Registered_ID" Association="Self.FK_dbo_Results_dbo_Registereds_Registered_ID">
+            <End Role="Registereds" EntitySet="Registereds" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UsersInfoes_dbo_Infoes_Info_ID" Association="Self.FK_dbo_UsersInfoes_dbo_Infoes_Info_ID">
+            <End Role="Infoes" EntitySet="Infoes" />
+            <End Role="UsersInfoes" EntitySet="UsersInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UsersInfoResults_dbo_Results_Result_ID" Association="Self.FK_dbo_UsersInfoResults_dbo_Results_Result_ID">
+            <End Role="Results" EntitySet="Results" />
+            <End Role="UsersInfoResults" EntitySet="UsersInfoResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UsersInfoResults_dbo_UsersInfoes_UsersInfo_ID" Association="Self.FK_dbo_UsersInfoResults_dbo_UsersInfoes_UsersInfo_ID">
+            <End Role="UsersInfoes" EntitySet="UsersInfoes" />
+            <End Role="UsersInfoResults" EntitySet="UsersInfoResults" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Users_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Coordinates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Latitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Longitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Locations" Relationship="Self.FK_dbo_Locations_dbo_Coordinates_Coordinates_ID" FromRole="Coordinates" ToRole="Locations" />
+        </EntityType>
+        <EntityType Name="Dobs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Results" Relationship="Self.FK_dbo_Results_dbo_Dobs_Dob_ID" FromRole="Dobs" ToRole="Results" />
+        </EntityType>
+        <EntityType Name="Ids">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Results" Relationship="Self.FK_dbo_Results_dbo_Ids_id_ID" FromRole="Ids" ToRole="Results" />
+        </EntityType>
+        <EntityType Name="Infoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Seed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Results" Type="Int32" Nullable="false" />
+          <Property Name="Page" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UsersInfoes" Relationship="Self.FK_dbo_UsersInfoes_dbo_Infoes_Info_ID" FromRole="Infoes" ToRole="UsersInfoes" />
+        </EntityType>
+        <EntityType Name="Locations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Postcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Coordinates_ID" Type="Int32" />
+          <Property Name="Street_ID" Type="Int32" />
+          <Property Name="Timezone_ID" Type="Int32" />
+          <NavigationProperty Name="Coordinates" Relationship="Self.FK_dbo_Locations_dbo_Coordinates_Coordinates_ID" FromRole="Locations" ToRole="Coordinates" />
+          <NavigationProperty Name="Streets" Relationship="Self.FK_dbo_Locations_dbo_Streets_Street_ID" FromRole="Locations" ToRole="Streets" />
+          <NavigationProperty Name="Timezones" Relationship="Self.FK_dbo_Locations_dbo_Timezones_Timezone_ID" FromRole="Locations" ToRole="Timezones" />
+          <NavigationProperty Name="Results" Relationship="Self.FK_dbo_Results_dbo_Locations_Location_ID" FromRole="Locations" ToRole="Results" />
+        </EntityType>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Uuid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Salt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Md5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sha1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sha256" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Results" Relationship="Self.FK_dbo_Results_dbo_Logins_Login_ID" FromRole="Logins" ToRole="Results" />
+        </EntityType>
+        <EntityType Name="Names">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="First" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Last" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Results" Relationship="Self.FK_dbo_Results_dbo_Names_Name_ID" FromRole="Names" ToRole="Results" />
+        </EntityType>
+        <EntityType Name="Pictures">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Large" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Medium" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Thumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Results" Relationship="Self.FK_dbo_Results_dbo_Pictures_Picture_ID" FromRole="Pictures" ToRole="Results" />
+        </EntityType>
+        <EntityType Name="Registereds">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Results" Relationship="Self.FK_dbo_Results_dbo_Registereds_Registered_ID" FromRole="Registereds" ToRole="Results" />
+        </EntityType>
+        <EntityType Name="Results">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cell" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Dob_ID" Type="Int32" />
+          <Property Name="id_ID" Type="Int32" />
+          <Property Name="Location_ID" Type="Int32" />
+          <Property Name="Login_ID" Type="Int32" />
+          <Property Name="Name_ID" Type="Int32" />
+          <Property Name="Picture_ID" Type="Int32" />
+          <Property Name="Registered_ID" Type="Int32" />
+          <NavigationProperty Name="Dobs" Relationship="Self.FK_dbo_Results_dbo_Dobs_Dob_ID" FromRole="Results" ToRole="Dobs" />
+          <NavigationProperty Name="Ids" Relationship="Self.FK_dbo_Results_dbo_Ids_id_ID" FromRole="Results" ToRole="Ids" />
+          <NavigationProperty Name="Locations" Relationship="Self.FK_dbo_Results_dbo_Locations_Location_ID" FromRole="Results" ToRole="Locations" />
+          <NavigationProperty Name="Logins" Relationship="Self.FK_dbo_Results_dbo_Logins_Login_ID" FromRole="Results" ToRole="Logins" />
+          <NavigationProperty Name="Names" Relationship="Self.FK_dbo_Results_dbo_Names_Name_ID" FromRole="Results" ToRole="Names" />
+          <NavigationProperty Name="Pictures" Relationship="Self.FK_dbo_Results_dbo_Pictures_Picture_ID" FromRole="Results" ToRole="Pictures" />
+          <NavigationProperty Name="Registereds" Relationship="Self.FK_dbo_Results_dbo_Registereds_Registered_ID" FromRole="Results" ToRole="Registereds" />
+          <NavigationProperty Name="UsersInfoes" Relationship="Self.UsersInfoResults" FromRole="Results" ToRole="UsersInfoes" />
+        </EntityType>
+        <EntityType Name="Streets">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Locations" Relationship="Self.FK_dbo_Locations_dbo_Streets_Street_ID" FromRole="Streets" ToRole="Locations" />
+        </EntityType>
+        <EntityType Name="Timezones">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Offset" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Locations" Relationship="Self.FK_dbo_Locations_dbo_Timezones_Timezone_ID" FromRole="Timezones" ToRole="Locations" />
+        </EntityType>
+        <EntityType Name="UsersInfoes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Info_ID" Type="Int32" />
+          <NavigationProperty Name="Infoes" Relationship="Self.FK_dbo_UsersInfoes_dbo_Infoes_Info_ID" FromRole="UsersInfoes" ToRole="Infoes" />
+          <NavigationProperty Name="Results" Relationship="Self.UsersInfoResults" FromRole="UsersInfoes" ToRole="Results" />
+        </EntityType>
+        <Association Name="FK_dbo_Locations_dbo_Coordinates_Coordinates_ID">
+          <End Role="Coordinates" Type="Self.Coordinates" Multiplicity="0..1" />
+          <End Role="Locations" Type="Self.Locations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coordinates">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Locations">
+              <PropertyRef Name="Coordinates_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Results_dbo_Dobs_Dob_ID">
+          <End Role="Dobs" Type="Self.Dobs" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dobs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="Dob_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Results_dbo_Ids_id_ID">
+          <End Role="Ids" Type="Self.Ids" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ids">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="id_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UsersInfoes_dbo_Infoes_Info_ID">
+          <End Role="Infoes" Type="Self.Infoes" Multiplicity="0..1" />
+          <End Role="UsersInfoes" Type="Self.UsersInfoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Infoes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UsersInfoes">
+              <PropertyRef Name="Info_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Locations_dbo_Streets_Street_ID">
+          <End Role="Streets" Type="Self.Streets" Multiplicity="0..1" />
+          <End Role="Locations" Type="Self.Locations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Streets">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Locations">
+              <PropertyRef Name="Street_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Locations_dbo_Timezones_Timezone_ID">
+          <End Role="Timezones" Type="Self.Timezones" Multiplicity="0..1" />
+          <End Role="Locations" Type="Self.Locations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Timezones">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Locations">
+              <PropertyRef Name="Timezone_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Results_dbo_Locations_Location_ID">
+          <End Role="Locations" Type="Self.Locations" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Locations">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="Location_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Results_dbo_Logins_Login_ID">
+          <End Role="Logins" Type="Self.Logins" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Logins">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="Login_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Results_dbo_Names_Name_ID">
+          <End Role="Names" Type="Self.Names" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Names">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="Name_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Results_dbo_Pictures_Picture_ID">
+          <End Role="Pictures" Type="Self.Pictures" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pictures">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="Picture_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Results_dbo_Registereds_Registered_ID">
+          <End Role="Registereds" Type="Self.Registereds" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registereds">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="Registered_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsersInfoResults">
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <End Role="UsersInfoes" Type="Self.UsersInfoes" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="UsersModel" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="Coordinates" EntityType="Self.Coordinates" />
+          <EntitySet Name="Dobs" EntityType="Self.Dobs" />
+          <EntitySet Name="Ids" EntityType="Self.Ids" />
+          <EntitySet Name="Infoes" EntityType="Self.Infoes" />
+          <EntitySet Name="Locations" EntityType="Self.Locations" />
+          <EntitySet Name="Logins" EntityType="Self.Logins" />
+          <EntitySet Name="Names" EntityType="Self.Names" />
+          <EntitySet Name="Pictures" EntityType="Self.Pictures" />
+          <EntitySet Name="Registereds" EntityType="Self.Registereds" />
+          <EntitySet Name="Results" EntityType="Self.Results" />
+          <EntitySet Name="Streets" EntityType="Self.Streets" />
+          <EntitySet Name="Timezones" EntityType="Self.Timezones" />
+          <EntitySet Name="UsersInfoes" EntityType="Self.UsersInfoes" />
+          <AssociationSet Name="FK_dbo_Locations_dbo_Coordinates_Coordinates_ID" Association="Self.FK_dbo_Locations_dbo_Coordinates_Coordinates_ID">
+            <End Role="Coordinates" EntitySet="Coordinates" />
+            <End Role="Locations" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Results_dbo_Dobs_Dob_ID" Association="Self.FK_dbo_Results_dbo_Dobs_Dob_ID">
+            <End Role="Dobs" EntitySet="Dobs" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Results_dbo_Ids_id_ID" Association="Self.FK_dbo_Results_dbo_Ids_id_ID">
+            <End Role="Ids" EntitySet="Ids" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UsersInfoes_dbo_Infoes_Info_ID" Association="Self.FK_dbo_UsersInfoes_dbo_Infoes_Info_ID">
+            <End Role="Infoes" EntitySet="Infoes" />
+            <End Role="UsersInfoes" EntitySet="UsersInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Locations_dbo_Streets_Street_ID" Association="Self.FK_dbo_Locations_dbo_Streets_Street_ID">
+            <End Role="Streets" EntitySet="Streets" />
+            <End Role="Locations" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Locations_dbo_Timezones_Timezone_ID" Association="Self.FK_dbo_Locations_dbo_Timezones_Timezone_ID">
+            <End Role="Timezones" EntitySet="Timezones" />
+            <End Role="Locations" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Results_dbo_Locations_Location_ID" Association="Self.FK_dbo_Results_dbo_Locations_Location_ID">
+            <End Role="Locations" EntitySet="Locations" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Results_dbo_Logins_Login_ID" Association="Self.FK_dbo_Results_dbo_Logins_Login_ID">
+            <End Role="Logins" EntitySet="Logins" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Results_dbo_Names_Name_ID" Association="Self.FK_dbo_Results_dbo_Names_Name_ID">
+            <End Role="Names" EntitySet="Names" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Results_dbo_Pictures_Picture_ID" Association="Self.FK_dbo_Results_dbo_Pictures_Picture_ID">
+            <End Role="Pictures" EntitySet="Pictures" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Results_dbo_Registereds_Registered_ID" Association="Self.FK_dbo_Results_dbo_Registereds_Registered_ID">
+            <End Role="Registereds" EntitySet="Registereds" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="UsersInfoResults" Association="Self.UsersInfoResults">
+            <End Role="Results" EntitySet="Results" />
+            <End Role="UsersInfoes" EntitySet="UsersInfoes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Users_ModelContainer" CdmEntityContainer="UsersModel">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="Users_Model.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Coordinates">
+            <EntityTypeMapping TypeName="Users_Model.Coordinates">
+              <MappingFragment StoreEntitySet="Coordinates">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dobs">
+            <EntityTypeMapping TypeName="Users_Model.Dobs">
+              <MappingFragment StoreEntitySet="Dobs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ids">
+            <EntityTypeMapping TypeName="Users_Model.Ids">
+              <MappingFragment StoreEntitySet="Ids">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Infoes">
+            <EntityTypeMapping TypeName="Users_Model.Infoes">
+              <MappingFragment StoreEntitySet="Infoes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Seed" ColumnName="Seed" />
+                <ScalarProperty Name="Results" ColumnName="Results" />
+                <ScalarProperty Name="Page" ColumnName="Page" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="Users_Model.Locations">
+              <MappingFragment StoreEntitySet="Locations">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="Coordinates_ID" ColumnName="Coordinates_ID" />
+                <ScalarProperty Name="Street_ID" ColumnName="Street_ID" />
+                <ScalarProperty Name="Timezone_ID" ColumnName="Timezone_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="Users_Model.Logins">
+              <MappingFragment StoreEntitySet="Logins">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Uuid" ColumnName="Uuid" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+                <ScalarProperty Name="Md5" ColumnName="Md5" />
+                <ScalarProperty Name="Sha1" ColumnName="Sha1" />
+                <ScalarProperty Name="Sha256" ColumnName="Sha256" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Names">
+            <EntityTypeMapping TypeName="Users_Model.Names">
+              <MappingFragment StoreEntitySet="Names">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="First" ColumnName="First" />
+                <ScalarProperty Name="Last" ColumnName="Last" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pictures">
+            <EntityTypeMapping TypeName="Users_Model.Pictures">
+              <MappingFragment StoreEntitySet="Pictures">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Large" ColumnName="Large" />
+                <ScalarProperty Name="Medium" ColumnName="Medium" />
+                <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registereds">
+            <EntityTypeMapping TypeName="Users_Model.Registereds">
+              <MappingFragment StoreEntitySet="Registereds">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Results">
+            <EntityTypeMapping TypeName="Users_Model.Results">
+              <MappingFragment StoreEntitySet="Results">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Cell" ColumnName="Cell" />
+                <ScalarProperty Name="Nat" ColumnName="Nat" />
+                <ScalarProperty Name="Dob_ID" ColumnName="Dob_ID" />
+                <ScalarProperty Name="id_ID" ColumnName="id_ID" />
+                <ScalarProperty Name="Location_ID" ColumnName="Location_ID" />
+                <ScalarProperty Name="Login_ID" ColumnName="Login_ID" />
+                <ScalarProperty Name="Name_ID" ColumnName="Name_ID" />
+                <ScalarProperty Name="Picture_ID" ColumnName="Picture_ID" />
+                <ScalarProperty Name="Registered_ID" ColumnName="Registered_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Streets">
+            <EntityTypeMapping TypeName="Users_Model.Streets">
+              <MappingFragment StoreEntitySet="Streets">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Timezones">
+            <EntityTypeMapping TypeName="Users_Model.Timezones">
+              <MappingFragment StoreEntitySet="Timezones">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Offset" ColumnName="Offset" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersInfoes">
+            <EntityTypeMapping TypeName="Users_Model.UsersInfoes">
+              <MappingFragment StoreEntitySet="UsersInfoes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Info_ID" ColumnName="Info_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="UsersInfoResults" TypeName="Users_Model.UsersInfoResults" StoreEntitySet="UsersInfoResults">
+            <EndProperty Name="Results">
+              <ScalarProperty Name="ID" ColumnName="Result_ID" />
+            </EndProperty>
+            <EndProperty Name="UsersInfoes">
+              <ScalarProperty Name="ID" ColumnName="UsersInfo_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

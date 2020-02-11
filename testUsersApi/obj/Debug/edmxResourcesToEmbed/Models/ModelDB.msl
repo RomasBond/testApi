@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище Users_ModelContainer" CdmEntityContainer="UsersModel">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="Users_Model.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coordinates">
+      <EntityTypeMapping TypeName="Users_Model.Coordinates">
+        <MappingFragment StoreEntitySet="Coordinates">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dobs">
+      <EntityTypeMapping TypeName="Users_Model.Dobs">
+        <MappingFragment StoreEntitySet="Dobs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ids">
+      <EntityTypeMapping TypeName="Users_Model.Ids">
+        <MappingFragment StoreEntitySet="Ids">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Infoes">
+      <EntityTypeMapping TypeName="Users_Model.Infoes">
+        <MappingFragment StoreEntitySet="Infoes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Seed" ColumnName="Seed" />
+          <ScalarProperty Name="Results" ColumnName="Results" />
+          <ScalarProperty Name="Page" ColumnName="Page" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="Users_Model.Locations">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="Coordinates_ID" ColumnName="Coordinates_ID" />
+          <ScalarProperty Name="Street_ID" ColumnName="Street_ID" />
+          <ScalarProperty Name="Timezone_ID" ColumnName="Timezone_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="Users_Model.Logins">
+        <MappingFragment StoreEntitySet="Logins">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Uuid" ColumnName="Uuid" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Salt" ColumnName="Salt" />
+          <ScalarProperty Name="Md5" ColumnName="Md5" />
+          <ScalarProperty Name="Sha1" ColumnName="Sha1" />
+          <ScalarProperty Name="Sha256" ColumnName="Sha256" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Names">
+      <EntityTypeMapping TypeName="Users_Model.Names">
+        <MappingFragment StoreEntitySet="Names">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="First" ColumnName="First" />
+          <ScalarProperty Name="Last" ColumnName="Last" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pictures">
+      <EntityTypeMapping TypeName="Users_Model.Pictures">
+        <MappingFragment StoreEntitySet="Pictures">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Large" ColumnName="Large" />
+          <ScalarProperty Name="Medium" ColumnName="Medium" />
+          <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registereds">
+      <EntityTypeMapping TypeName="Users_Model.Registereds">
+        <MappingFragment StoreEntitySet="Registereds">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Results">
+      <EntityTypeMapping TypeName="Users_Model.Results">
+        <MappingFragment StoreEntitySet="Results">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Cell" ColumnName="Cell" />
+          <ScalarProperty Name="Nat" ColumnName="Nat" />
+          <ScalarProperty Name="Dob_ID" ColumnName="Dob_ID" />
+          <ScalarProperty Name="id_ID" ColumnName="id_ID" />
+          <ScalarProperty Name="Location_ID" ColumnName="Location_ID" />
+          <ScalarProperty Name="Login_ID" ColumnName="Login_ID" />
+          <ScalarProperty Name="Name_ID" ColumnName="Name_ID" />
+          <ScalarProperty Name="Picture_ID" ColumnName="Picture_ID" />
+          <ScalarProperty Name="Registered_ID" ColumnName="Registered_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Streets">
+      <EntityTypeMapping TypeName="Users_Model.Streets">
+        <MappingFragment StoreEntitySet="Streets">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Timezones">
+      <EntityTypeMapping TypeName="Users_Model.Timezones">
+        <MappingFragment StoreEntitySet="Timezones">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Offset" ColumnName="Offset" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersInfoes">
+      <EntityTypeMapping TypeName="Users_Model.UsersInfoes">
+        <MappingFragment StoreEntitySet="UsersInfoes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Info_ID" ColumnName="Info_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="UsersInfoResults" TypeName="Users_Model.UsersInfoResults" StoreEntitySet="UsersInfoResults">
+      <EndProperty Name="Results">
+        <ScalarProperty Name="ID" ColumnName="Result_ID" />
+      </EndProperty>
+      <EndProperty Name="UsersInfoes">
+        <ScalarProperty Name="ID" ColumnName="UsersInfo_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

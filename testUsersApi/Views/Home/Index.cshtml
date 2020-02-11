@@ -1,0 +1,69 @@
+﻿@model List<testUsersApi.Models.User>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+    <div class="jumbotron">
+
+        <div>
+
+            @using (Html.BeginForm("Index", "Home", new { pageNum = ((int)Html.ViewData["pageNum"] - 1) }))
+            {
+                <div class="col-md-1">
+                    <input class="btn btn-primary" type="submit" value="Назад">
+                </div>
+            }
+
+
+            @using (Html.BeginForm("Index", "Home", new { pageNum = ((int)Html.ViewData["pageNum"]) }))
+            {
+                <div class="col-md-1">
+                    <input class="btn btn-default" name="submitButton" type="submit" value="ФИО" title="Сортировка по имени" />
+                </div>
+                <div class="col-md-1">
+                    <input class="btn btn-default" name="submitButton" type="submit" value="Дата" title="Сортировка по дате рождения" />
+                </div>
+            }
+
+            @using (Html.BeginForm("Index", "Home", new { pageNum = ((int)Html.ViewData["pageNum"] + 1) }))
+            {
+                <div class="col-md-offset-3">
+                    <input class="btn btn-primary" type="submit" value="Вперед">
+                </div>
+            }
+         </div>
+
+
+    </div>
+
+
+<div class="container">
+
+        @foreach (var x in Model)
+        {
+            <div class="row">
+
+                <div class="col-md-2">
+                    <p>
+                        <img src="@x.Large" />
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p>
+
+                        <label>Имя:</label> @x.First<br />
+                        <label>Фамилия:</label> @x.Last<br />
+                        <label>Дата рождения:</label> @x.Date <br />
+                        <label>Email:</label> @x.Email<br />
+                        <label>Телефон:</label> @x.Phone
+                        @*ID для проверки корректный выборки и сортировки*@
+                        <label>ID:</label> @x.ID
+                    </p>
+                </div>
+
+            </div>
+        }
+    
+ </div>
